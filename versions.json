@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-10-26T09:24:19.022326+08:00",
+  "updated_at": "2026-10-29T00:17:53.895675+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -88,20 +88,20 @@
       "client_protocol_max": 2
     },
     "6.12": {
-      "version": "2026.10.26.1",
-      "version_code": 2026102601,
+      "version": "2026.10.28.1",
+      "version_code": 2026102801,
       "target": "android16-6.12",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.26.1/liming_kernel-6.12.lmko",
-      "path": "ko/2026.10.26.1/liming_kernel-6.12.lmko",
-      "size": 1531228,
-      "sha256": "c4febb37d50e910e3421fe6974dc45260479126aa0feaac101cb204593df45b8",
-      "plaintext_size": 1531120,
-      "plaintext_sha256": "9ea251fd34a3aeb760c3c6e75c704b26ece8653e428a3f0d48c00e9e9cbcc207",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.28.1/liming_kernel-6.12.lmko",
+      "path": "ko/2026.10.28.1/liming_kernel-6.12.lmko",
+      "size": 1567348,
+      "sha256": "dbab29598fac9d592573f29da56b25c02be678c4c95c6d50dd31e3887f237b12",
+      "plaintext_size": 1567240,
+      "plaintext_sha256": "c3eb0c205b9468cab319bb91322d3422591c5e2c75b0a58bfb290fce7b7fbe1d",
       "vermagic": "6.12.52-4k SMP preempt mod_unload modversions aarch64",
-      "validation": "built-and-symbol-cfi-audited",
+      "validation": "mkp-short-relay-tested-full-user-touch-regression-pending",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     }
@@ -114,6 +114,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "vJshbsUI+oe0NgHmIiUtZ18YxaI3Vmp1heONGA155Q5PaMtZKEH91n0ZVQ1Vz2tnx94TRc5YEeXJ+N2PoBZwAA=="
+    "value": "XNnlBwWWc3RUpkrSrGaUL7LhKysmlLZFpOTqFxgXwICVMBahOdnr62Gdpe6eWsY2QuEtzEUl6o8/RKwWH+5hBA=="
   }
 }
