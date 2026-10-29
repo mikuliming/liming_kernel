@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-10-29T00:17:53.895675+08:00",
+  "updated_at": "2026-10-29T19:58:15.932476+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -88,20 +88,20 @@
       "client_protocol_max": 2
     },
     "6.12": {
-      "version": "2026.10.28.1",
-      "version_code": 2026102801,
+      "version": "2026.10.29.1",
+      "version_code": 2026102901,
       "target": "android16-6.12",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.28.1/liming_kernel-6.12.lmko",
-      "path": "ko/2026.10.28.1/liming_kernel-6.12.lmko",
-      "size": 1567348,
-      "sha256": "dbab29598fac9d592573f29da56b25c02be678c4c95c6d50dd31e3887f237b12",
-      "plaintext_size": 1567240,
-      "plaintext_sha256": "c3eb0c205b9468cab319bb91322d3422591c5e2c75b0a58bfb290fce7b7fbe1d",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.29.1/liming_kernel-6.12.lmko",
+      "path": "ko/2026.10.29.1/liming_kernel-6.12.lmko",
+      "size": 1576860,
+      "sha256": "f10a58833404a02a75316bd5dec19665d5c6491718d8e1a74e4d4a1fd835ef37",
+      "plaintext_size": 1576752,
+      "plaintext_sha256": "985bce1fd05395825d8d0e39581df4259335207105b6020b0bd1406ea5130a02",
       "vermagic": "6.12.52-4k SMP preempt mod_unload modversions aarch64",
-      "validation": "mkp-short-relay-tested-full-user-touch-regression-pending",
+      "validation": "pointer-fixmap-backend-device-regression-pending",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     }
@@ -114,6 +114,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "XNnlBwWWc3RUpkrSrGaUL7LhKysmlLZFpOTqFxgXwICVMBahOdnr62Gdpe6eWsY2QuEtzEUl6o8/RKwWH+5hBA=="
+    "value": "BP1p/KG+HxP03YDi9SywQM4VHK0ZfZWa+JH9mu0TdFB8WxcClGut2gE/xTHBV3PRj6YUifZWleS9Vo41SrteDA=="
   }
 }
