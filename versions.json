@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-10-30T01:24:44.925247+08:00",
+  "updated_at": "2026-10-30T19:50:36.481140+00:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -104,6 +104,33 @@
       "validation": "gateway-handoff-independent-6.12-device-validated-integrated-build-audited",
       "client_protocol_min": 2,
       "client_protocol_max": 2
+    },
+    "6.1_vivo": {
+      "version": "2026.10.31.1",
+      "version_code": 2026103101,
+      "target": "android14-6.1-vivo",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.31.1/6.1_vivo.lmko",
+      "path": "ko/2026.10.31.1/6.1_vivo.lmko",
+      "size": 574140,
+      "sha256": "8065b09b0b5551c791621c19964def6aea9bac9f3e2f4b21ea8a8ea0b6958662",
+      "plaintext_size": 574032,
+      "plaintext_sha256": "1e091e5e91b5f34dc23ba18520cca028222b9c3fdfeceacca10c1388453933c4",
+      "vermagic": "6.1.145-android14-11-maybe-dirty SMP preempt mod_unload modversions aarch64 vivo",
+      "validation": "V2307A independent clients using unchanged Miku SDK: memory, hardware/PTE, 18 Request cases, 16 touch-map lifecycles, SDK unload; active touch pending",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2,
+      "profile_id": "vivo-v2307a-6.1.145-cb6eef62",
+      "kernel_release": "6.1.145-android14-11-maybe-dirty",
+      "btf_sha256": "cb6eef62579e5015603795931420cf4b3655e3f5bc89fb3d17bd52b8dcd6b024",
+      "module_layout_crc": "0x3ab53021",
+      "device_model_observed": "V2307A",
+      "automatic_selection": false,
+      "requires_exact_abi_profile": true,
+      "module_visible": true,
+      "compatibility_note": "Not a generic vivo package. Existing minor-version-only loaders need explicit profile selection."
     }
   },
   "client_protocol": {
@@ -114,6 +141,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "9iswRX56xkej40KRASdTWGhrQv/vh5VQQk5rD51of3dcWEvkWpzrySXTUrE03rLWgzXyY7mmuUt3oX0+T8pvCQ=="
+    "value": "EKGJTeXpf4NlVogXEim4f1rMSu+MyeDPn+yJ0GRVKiCb8ZgJ/sxOfMiIbQfFKUk++wsD25yWWzokLMjMu7h1CQ=="
   }
 }
