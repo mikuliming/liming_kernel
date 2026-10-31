@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-10-31T18:51:02.469522+00:00",
+  "updated_at": "2026-10-31T19:03:51.975027+00:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -104,35 +104,6 @@
       "validation": "force-load path audited; PTE entry pad (KCFI) fix; KPTI kernels report PTE unsupported; device-tested on 5.10.168, 6.12.69 and 6.1.145 (KPTI=1 -> PTE gated)",
       "client_protocol_min": 2,
       "client_protocol_max": 2
-    },
-    "6.1_vivo": {
-      "id": "android14-6.1-vivo",
-      "version": "2026.10.31.2",
-      "version_code": 2026103102,
-      "target": "android14-6.1-vivo",
-      "architecture": "aarch64",
-      "page_size": 4096,
-      "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.10.31.2/6.1_vivo.lmko",
-      "path": "ko/2026.10.31.2/6.1_vivo.lmko",
-      "size": 582596,
-      "sha256": "6e2ec4b0f54189c790dc441ad6f10c61e4bab9acbb4f0579d2d09a2636c15eeb",
-      "plaintext_size": 582488,
-      "plaintext_sha256": "ff87414070d28d60af878877090829f2e377d1644839b142d001012b2fbc1fe9",
-      "vermagic": "6.1.145-android14-11-maybe-dirty SMP preempt mod_unload modversions aarch64 vivo",
-      "validation": "V2307A independent clients using unchanged Miku SDK: memory, hardware/PTE, 18 Request cases, 16 touch-map lifecycles, SDK unload; anti-ptrace and default-hidden module restored",
-      "client_protocol_min": 2,
-      "client_protocol_max": 2,
-      "profile_id": "vivo-v2307a-6.1.145-cb6eef62",
-      "kernel_release": "6.1.145-android14-11-maybe-dirty",
-      "btf_sha256": "cb6eef62579e5015603795931420cf4b3655e3f5bc89fb3d17bd52b8dcd6b024",
-      "module_layout_crc": "0x3ab53021",
-      "device_model_observed": "V2307A",
-      "automatic_selection": false,
-      "requires_exact_abi_profile": false,
-      "module_visible": false,
-      "unload_requires_restore": true,
-      "compatibility_note": "Extra manual choice for Android 14 / 6.1 next to the generic package; no exact kernel/BTF fingerprint match required. Module hides itself on load, so unload requires LM_DRIVER_RESTORE first (or reboot)."
     }
   },
   "client_protocol": {
@@ -143,6 +114,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "CYWmjAvUNqE/wF8XRYEg/fX58rT5sl/Fx7VfDBnTEuX3RckLbA6h2FTUy2urxMwNxH+h8s1wzweIq9TrIQn9Dw=="
+    "value": "1FkOirLmDbGGAy9rX6XdWTlPGdI3vc0Rg2Zxjl7/At8hbNJhHPwl8gpE1/GHoUrYUxs4xirCovTtUj1ro597DQ=="
   }
 }
