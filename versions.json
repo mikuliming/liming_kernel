@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-02T03:01:18.758238+08:00",
+  "updated_at": "2026-11-04T00:10:40.096421+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -104,6 +104,24 @@
       "validation": "only axes with a usable range are advertised to the client, so panels that declare ABS_MT_PRESSURE with max 0 no longer abort the session after open; attach retries busy / pending-input for <=200 ms; block-mapped module data is still written through the live mapping and verified; release-slot pressure floor and exit recovery kept; compiled and audited; per-CPU runtime-allocated; 6.12 keeps kernel alloc_tag keys (864B)",
       "client_protocol_min": 2,
       "client_protocol_max": 2
+    },
+    "6.18": {
+      "version": "2026.11.3.1",
+      "version_code": 2026110301,
+      "target": "android17-6.18",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.3.1/liming_kernel-6.18.lmko",
+      "path": "ko/2026.11.3.1/liming_kernel-6.18.lmko",
+      "size": 1530574,
+      "sha256": "ad073f7c13a9840324f9630786083e848585563bc9be195ba281eb4036758ac8",
+      "plaintext_size": 1530466,
+      "plaintext_sha256": "5f5d6abdc1cdb8a7bd7fe2953846e54319220fb45f3a929da8158e15b28c46fe",
+      "vermagic": "6.18.21-android17-5-gf957accaf563-ab15926176-4k SMP preempt mod_unload modversions aarch64",
+      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS); step-hook API removed upstream so the single-step callback is compiled out and the kernel's own suspended-breakpoint handling is used; namespace import, text-patching header and alloc_workqueue_attrs_noprof adapted for 6.18; touch relaying, PTE gateway, per-CPU runtime allocation and exit recovery unchanged from 2026.11.1.8; vermagic rewritten to the device release; no static .data..percpu",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2
     }
   },
   "client_protocol": {
@@ -114,6 +132,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "EbfPNK6nOpNGKVCgSD1QJuWgqNIOE78lzYr6rsfH2MB8YrG/a28UvX6vN97yUp4nxNw93nq6sJEzNeaoikrcAg=="
+    "value": "2RcYGei9MAG29q0oainj/Lski6wdvLAqgyIpbnx+j8Ych0M9X1/ZMj7JIQZCDql2p0Nk9kEsbJYDiUoqloq3Cg=="
   }
 }
