@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-04T00:10:40.096421+08:00",
+  "updated_at": "2026-11-04T04:06:18.996426+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -122,6 +122,25 @@
       "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS); step-hook API removed upstream so the single-step callback is compiled out and the kernel's own suspended-breakpoint handling is used; namespace import, text-patching header and alloc_workqueue_attrs_noprof adapted for 6.18; touch relaying, PTE gateway, per-CPU runtime allocation and exit recovery unchanged from 2026.11.1.8; vermagic rewritten to the device release; no static .data..percpu",
       "client_protocol_min": 2,
       "client_protocol_max": 2
+    },
+    "6.1_vivo": {
+      "version": "2026.11.3.1",
+      "version_code": 2026110301,
+      "target": "android14-6.1-vivo",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.3.1/liming_kernel-6.1-vivo.lmko",
+      "path": "ko/2026.11.3.1/liming_kernel-6.1-vivo.lmko",
+      "size": 3510499,
+      "sha256": "b22609077a114e3d1b821d509ce859963abe58cf6cf0be29d37f3cbff3ae42fe",
+      "plaintext_size": 3510391,
+      "plaintext_sha256": "d45bf226b9f952ef099173d2955b6ea7a549543541211c96b7f604e1d653ae69",
+      "vermagic": "6.1.145-android14-11-maybe-dirty SMP preempt mod_unload modversions aarch64",
+      "btf_layout": "ws56",
+      "validation": "vivo-OEM variant: target kernel adds android_oem_data1 to struct work_struct, so device=920/input_dev=1616 and input_dev node moves to 1512 (GKI 6.1 is 912/1608/1504); built with a matching 8-byte reserve so list traversal, input_get_device and all later offsets line up; imports audited against the 6.1 GKI export set; CRCs cleared; vermagic written for 6.1.145-android14-11",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2
     }
   },
   "client_protocol": {
@@ -132,6 +151,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "2RcYGei9MAG29q0oainj/Lski6wdvLAqgyIpbnx+j8Ych0M9X1/ZMj7JIQZCDql2p0Nk9kEsbJYDiUoqloq3Cg=="
+    "value": "kUb/9ZjUjSlNSbeQaCCwExF7oxqSWY50l5OcF1lluLFwqOqiYWf3Bo+A8efyO+eFFx8A4g/zI3SWZAhoSjaSAw=="
   }
 }
