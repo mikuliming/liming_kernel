@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-04T19:13:12.928216+08:00",
+  "updated_at": "2026-11-05T02:16:06.882642+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -106,20 +106,20 @@
       "client_protocol_max": 2
     },
     "6.18": {
-      "version": "2026.11.4.2",
-      "version_code": 2026110402,
+      "version": "2026.11.5.1",
+      "version_code": 2026110501,
       "target": "android17-6.18",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.4.2/liming_kernel-6.18.lmko",
-      "path": "ko/2026.11.4.2/liming_kernel-6.18.lmko",
-      "size": 1548542,
-      "sha256": "7a3f9ea8e8b6034e115eccbc9f0af58cdadb55811895928400e83581ece0dfd9",
-      "plaintext_size": 1548434,
-      "plaintext_sha256": "99b794ea1aabd760838f4e405031da9c83ec6fd0c688e9b2f4477795b6ac0604",
-      "vermagic": "6.18.21-android17-5-gf957accaf563-ab15926176-4k SMP preempt mod_unload modversions aarch64",
-      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS, BTI/PAC, no LTO); 6.18 removed register_user_step_hook, so the EL0 single-step callback is taken over by rewriting the single BL arm64_force_sig_fault inside do_el0_softstep (located by the adjacent mov w0,#5 / mov w1,#2) into a core B to a newly allocated immutable gateway page in the +/-128 MiB vmalloc window; the gateway jumps absolutely into the module stub, which saves the full register file, dispatches in C and rewrites its resume tail into an absolute jump back to gateway+64 -> BL+4. Perf event re-enable is deferred to TWA_RESUME because perf_event_enable sleeps. If any step of the install fails the whole PTE/CE single-step feature is refused (fail-closed) instead of advertising support. Also: maps path buffer 256->512 with only the trailing \" (deleted)\" suffix trimmed, arch_vma_name fallback when vm_ops->name is NULL, and BSS lookup now trims that suffix too. vermagic rewritten to the device release; __versions cleared; no static percpu; 2026.11.4.2 removes task_work_add from the import table (vendor kernels list it as a protected symbol and reject the load with -EACCES \"Unresolved symbol task_work_add\"); it is now resolved through kallsyms like the other private helpers",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.5.1/liming_kernel-6.18.lmko",
+      "path": "ko/2026.11.5.1/liming_kernel-6.18.lmko",
+      "size": 1535580,
+      "sha256": "8ba0d567dd7a8249048afa63c0d688d52121f0bb79d50cebd6d7c46ff69324b9",
+      "plaintext_size": 1535472,
+      "plaintext_sha256": "be1d0db34f636ee892619647925e1c5a81bae0ada67884aeeebf2bc307ccce0e",
+      "vermagic": "6.18.21-android17-5-gedb80646c73d-ab16663371-4k SMP preempt mod_unload modversions aarch64",
+      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS, BTI/PAC, no LTO); 6.18 removed register_user_step_hook, so the EL0 single-step callback is taken over by rewriting the single BL arm64_force_sig_fault inside do_el0_softstep (located by the adjacent mov w0,#5 / mov w1,#2) into a core B to a newly allocated immutable gateway page in the +/-128 MiB vmalloc window; the gateway jumps absolutely into the module stub, which saves the full register file, dispatches in C and rewrites its resume tail into an absolute jump back to gateway+64 -> BL+4. Perf event re-enable is deferred to TWA_RESUME because perf_event_enable sleeps. If any step of the install fails the whole PTE/CE single-step feature is refused (fail-closed) instead of advertising support. Also: maps path buffer 256->512 with only the trailing \" (deleted)\" suffix trimmed, arch_vma_name fallback when vm_ops->name is NULL, and BSS lookup now trims that suffix too. vermagic rewritten to the device release; __versions cleared; no static percpu; 2026.11.4.2 removes task_work_add from the import table (vendor kernels list it as a protected symbol and reject the load with -EACCES \"Unresolved symbol task_work_add\"); it is now resolved through kallsyms like the other private helpers; rebuilt with -fsanitize-cfi-icall-experimental-normalize-integers so KCFI type hashes match Android 17 6.18 GKI CONFIG_CFI_ICALL_NORMALIZE_INTEGERS=y (the previous package was built without it and mismatched integer-typed callbacks), vermagic rewritten to the target device release, struct module layout checked against the device BTF (size 1664, init 376, exit 1536), and handshake/version/read/write/maps/module-base verified on REDMAGIC NX819J 6.18.21-android17-5-gedb80646c73d",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     },
@@ -151,6 +151,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "JOFPuOAPdGr5lRDwg1XsxQg8i0QtcV0qXqiOfJ1KNQmeL2tk2EK76C5lZeIIGXVWM626IYkUeuE93c6QgPoqDw=="
+    "value": "U8GeW4IBE8f+ZMwHKvOKnKHdjEh/S0Zxb3k5fq/aX3EH95HOw/7Nicjnhw6zo8xAJgTsnv5qVUtj3ArO7swfDA=="
   }
 }
