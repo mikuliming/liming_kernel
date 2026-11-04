@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-04T04:06:18.996426+08:00",
+  "updated_at": "2026-11-04T08:14:27.391085+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -106,20 +106,20 @@
       "client_protocol_max": 2
     },
     "6.18": {
-      "version": "2026.11.3.1",
-      "version_code": 2026110301,
+      "version": "2026.11.4.1",
+      "version_code": 2026110401,
       "target": "android17-6.18",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.3.1/liming_kernel-6.18.lmko",
-      "path": "ko/2026.11.3.1/liming_kernel-6.18.lmko",
-      "size": 1530574,
-      "sha256": "ad073f7c13a9840324f9630786083e848585563bc9be195ba281eb4036758ac8",
-      "plaintext_size": 1530466,
-      "plaintext_sha256": "5f5d6abdc1cdb8a7bd7fe2953846e54319220fb45f3a929da8158e15b28c46fe",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.4.1/liming_kernel-6.18.lmko",
+      "path": "ko/2026.11.4.1/liming_kernel-6.18.lmko",
+      "size": 1548670,
+      "sha256": "4551b894c57950865405e4b018c06c1110b58e73dfcc207e1ba824a35c8aa1b4",
+      "plaintext_size": 1548562,
+      "plaintext_sha256": "d79da7e17b0a1a6a0d9d3a1ab504841fcaca8f0c371f38e62087769ff870a2c3",
       "vermagic": "6.18.21-android17-5-gf957accaf563-ab15926176-4k SMP preempt mod_unload modversions aarch64",
-      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS); step-hook API removed upstream so the single-step callback is compiled out and the kernel's own suspended-breakpoint handling is used; namespace import, text-patching header and alloc_workqueue_attrs_noprof adapted for 6.18; touch relaying, PTE gateway, per-CPU runtime allocation and exit recovery unchanged from 2026.11.1.8; vermagic rewritten to the device release; no static .data..percpu",
+      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS, BTI/PAC, no LTO); 6.18 removed register_user_step_hook, so the EL0 single-step callback is taken over by rewriting the single BL arm64_force_sig_fault inside do_el0_softstep (located by the adjacent mov w0,#5 / mov w1,#2) into a core B to a newly allocated immutable gateway page in the +/-128 MiB vmalloc window; the gateway jumps absolutely into the module stub, which saves the full register file, dispatches in C and rewrites its resume tail into an absolute jump back to gateway+64 -> BL+4. Perf event re-enable is deferred to TWA_RESUME because perf_event_enable sleeps. If any step of the install fails the whole PTE/CE single-step feature is refused (fail-closed) instead of advertising support. Also: maps path buffer 256->512 with only the trailing \" (deleted)\" suffix trimmed, arch_vma_name fallback when vm_ops->name is NULL, and BSS lookup now trims that suffix too. vermagic rewritten to the device release; __versions cleared; no static percpu",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     },
@@ -151,6 +151,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "kUb/9ZjUjSlNSbeQaCCwExF7oxqSWY50l5OcF1lluLFwqOqiYWf3Bo+A8efyO+eFFx8A4g/zI3SWZAhoSjaSAw=="
+    "value": "zOMtNkSEZysk8GaxtdgZhxfo6ivK/rcfOUecA211NzpnQXBfDEUfCktM3CI+dTo150IRWtkUdb0i0Ai1KVLxAQ=="
   }
 }
