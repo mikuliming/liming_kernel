@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-05T12:12:28.992184+08:00",
+  "updated_at": "2026-11-05T12:13:02.041687+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -106,20 +106,20 @@
       "client_protocol_max": 2
     },
     "6.18": {
-      "version": "2026.11.6.2",
-      "version_code": 2026110602,
+      "version": "2026.11.6.3",
+      "version_code": 2026110603,
       "target": "android17-6.18",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.6.2/liming_kernel-6.18.lmko",
-      "path": "ko/2026.11.6.2/liming_kernel-6.18.lmko",
-      "size": 1565612,
-      "sha256": "a71d81e79c871b68c3aceb527db2e66ee10155c730b39e200087f81c7a388d40",
-      "plaintext_size": 1565504,
-      "plaintext_sha256": "713815f8ce67ed7be64b74be1935df13a78e17e809c56eee2ef1237b39c1afd2",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.6.3/liming_kernel-6.18.lmko",
+      "path": "ko/2026.11.6.3/liming_kernel-6.18.lmko",
+      "size": 1575956,
+      "sha256": "27074ef66610472ce302bd47390c5b0f86cc39b0f76cc2a047a45e3d9903d4ab",
+      "plaintext_size": 1575848,
+      "plaintext_sha256": "6f29bb538e0cd1794799317c7823ae73871daaf1c928a16723c17aed578c6de1",
       "vermagic": "6.18.21-android17-5-gedb80646c73d-ab16663371-4k SMP preempt mod_unload modversions aarch64",
-      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS, BTI/PAC, no LTO); 6.18 removed register_user_step_hook, so the EL0 single-step callback is taken over by rewriting the single BL arm64_force_sig_fault inside do_el0_softstep (located by the adjacent mov w0,#5 / mov w1,#2) into a core B to a newly allocated immutable gateway page in the +/-128 MiB vmalloc window; the gateway jumps absolutely into the module stub, which saves the full register file, dispatches in C and rewrites its resume tail into an absolute jump back to gateway+64 -> BL+4. Perf event re-enable is deferred to TWA_RESUME because perf_event_enable sleeps. If any step of the install fails the whole PTE/CE single-step feature is refused (fail-closed) instead of advertising support. Also: maps path buffer 256->512 with only the trailing \" (deleted)\" suffix trimmed, arch_vma_name fallback when vm_ops->name is NULL, and BSS lookup now trims that suffix too. vermagic rewritten to the device release; __versions cleared; no static percpu; 2026.11.4.2 removes task_work_add from the import table (vendor kernels list it as a protected symbol and reject the load with -EACCES \"Unresolved symbol task_work_add\"); it is now resolved through kallsyms like the other private helpers; rebuilt with -fsanitize-cfi-icall-experimental-normalize-integers so KCFI type hashes match Android 17 6.18 GKI CONFIG_CFI_ICALL_NORMALIZE_INTEGERS=y (the previous package was built without it and mismatched integer-typed callbacks), vermagic rewritten to the target device release, struct module layout checked against the device BTF (size 1664, init 376, exit 1536), and handshake/version/read/write/maps/module-base verified on REDMAGIC NX819J 6.18.21-android17-5-gedb80646c73d; 2026.11.6.1 unifies this 6.18 baseline with the shared 5.10-6.12 source: every user single step is tracked in a 16-slot ownership ledger (including the gateway no-bp path) and the thread_struct.debug offsets are resolved from /sys/kernel/btf/vmlinux at init instead of compiled offsets; the import set is unchanged from 2026.11.5.1; 2026.11.6.2 calls kernel_read through a __nocfi wrapper so a vendor kernel with a different kCFI type hash for kernel_read cannot panic at init (enforced-CFI 5.15 reproduced); all other kallsyms-resolved helpers already used __nocfi wrappers",
+      "validation": "6.18.21 android17 common tree f957accaf563 compiled with gki_defconfig (4K pages, PREEMPT, MODVERSIONS, BTI/PAC, no LTO); 6.18 removed register_user_step_hook, so the EL0 single-step callback is taken over by rewriting the single BL arm64_force_sig_fault inside do_el0_softstep (located by the adjacent mov w0,#5 / mov w1,#2) into a core B to a newly allocated immutable gateway page in the +/-128 MiB vmalloc window; the gateway jumps absolutely into the module stub, which saves the full register file, dispatches in C and rewrites its resume tail into an absolute jump back to gateway+64 -> BL+4. Perf event re-enable is deferred to TWA_RESUME because perf_event_enable sleeps. If any step of the install fails the whole PTE/CE single-step feature is refused (fail-closed) instead of advertising support. Also: maps path buffer 256->512 with only the trailing \" (deleted)\" suffix trimmed, arch_vma_name fallback when vm_ops->name is NULL, and BSS lookup now trims that suffix too. vermagic rewritten to the device release; __versions cleared; no static percpu; 2026.11.4.2 removes task_work_add from the import table (vendor kernels list it as a protected symbol and reject the load with -EACCES \"Unresolved symbol task_work_add\"); it is now resolved through kallsyms like the other private helpers; rebuilt with -fsanitize-cfi-icall-experimental-normalize-integers so KCFI type hashes match Android 17 6.18 GKI CONFIG_CFI_ICALL_NORMALIZE_INTEGERS=y (the previous package was built without it and mismatched integer-typed callbacks), vermagic rewritten to the target device release, struct module layout checked against the device BTF (size 1664, init 376, exit 1536), and handshake/version/read/write/maps/module-base verified on REDMAGIC NX819J 6.18.21-android17-5-gedb80646c73d; 2026.11.6.1 unifies this 6.18 baseline with the shared 5.10-6.12 source: every user single step is tracked in a 16-slot ownership ledger (including the gateway no-bp path) and the thread_struct.debug offsets are resolved from /sys/kernel/btf/vmlinux at init instead of compiled offsets; the import set is unchanged from 2026.11.5.1; 2026.11.6.2 calls kernel_read through a __nocfi wrapper so a vendor kernel with a different kCFI type hash for kernel_read cannot panic at init (enforced-CFI 5.15 reproduced); all other kallsyms-resolved helpers already used __nocfi wrappers; 2026.11.6.3 applies the stability audit: __nocfi sme helper, raw-spinlock step ledger with reserve-before-enable and TIF-aware sweep, gateway restore verified before vfree, type-id based BTF layout validation with bitfield rejection, workqueue-deferred CE session free, and init-failure unwind",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     },
@@ -151,6 +151,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "xQd3qKFqbne2UseKVFliGmd09k6PZm2y9nkCUnJBbktMfwXk83KxvXVUa63wsuoUseytqmR2OCwELgehTLxmAg=="
+    "value": "R9Zsmj2lzVLyinKCz394BFoLSDBP3Y2m9PiC5lF0aG2CkXVjMPskAu9v/Jhwek29I0ZORLTyYu8RWktn1H3pDg=="
   }
 }
