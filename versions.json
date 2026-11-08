@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-09T02:05:41.509639+08:00",
+  "updated_at": "2026-11-09T05:40:22.707207+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -16,20 +16,20 @@
   "hardware_breakpoint_abi": "unchanged",
   "kernels": {
     "5.10": {
-      "version": "2026.11.6.21",
-      "version_code": 2026110621,
+      "version": "2026.11.6.22",
+      "version_code": 2026110622,
       "target": "android12-5.10",
       "architecture": "aarch64",
       "page_size": 4096,
       "package_format": "LMKOv1",
-      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.6.21/liming_kernel-5.10.lmko",
-      "path": "ko/2026.11.6.21/liming_kernel-5.10.lmko",
-      "size": 3290228,
-      "sha256": "17fcb3d7b00476318e2b64a892642b9401c630c84660342b15234327f28b7bab",
-      "plaintext_size": 3290120,
-      "plaintext_sha256": "88f874101a450a23a769f0f705a132d7ba92307230f2339c6489e9324e274be7",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.6.22/liming_kernel-5.10.lmko",
+      "path": "ko/2026.11.6.22/liming_kernel-5.10.lmko",
+      "size": 3292044,
+      "sha256": "b450b2cd8a0fca5a737e0f2b5e7b0534b254448f4045dacd54790ac64f13a94b",
+      "plaintext_size": 3291936,
+      "plaintext_sha256": "f27f69abaa11a78836042c294aee803a05ae1347004b24ca4814badc89594367",
       "vermagic": "5.10.245-dirty SMP preempt mod_unload modversions aarch64",
-      "validation": "2026.11.6.21 includes android17-6.18 in the same release: all six packages (5.10/5.15/6.1/6.6/6.12/6.18) are built from this source/kernel tree and published together. 6.18 uses its prepared 6.18.21 GKI tree, clang 21.1.0 and the CFI integer-normalization flag. The touch watchdog now uses timer_list plus a plain work_struct, with timer_delete_sync on 6.15+ and del_timer_sync on older branches, so the same source compiles for every release. 2026.11.6.20 made the install mode decide the layout: a normal install uses only the compiled offsets and never reads BTF; a force-adapted install resolves thread.debug from BTF and falls back to a read-only flush_ptrace_hw_breakpoint probe, and on 6.1 also resolves the four moving input_dev members from BTF or the input_allocate_device allocation size. The 6.1_vivo package is gone; one 6.1 package serves both GKI and vivo. The 5.10 branch writes /sys/rsc/qos/qos_enable and qos_cpu_enable to 0 at load and never restores them, avoiding the vivo RSC SVP scheduler brk #0x5512 on CE wake.",
+      "validation": "2026.11.6.22 (5.10 only): fixes the load regression introduced with the vivo RSC QoS write. kernel_write is no longer a load-time import; it is resolved through kallsyms and called via a __nocfi wrapper, and only after /sys/rsc/qos/qos_enable or qos_cpu_enable opened successfully, so non-vivo kernels never look it up. OEM 5.10 GKI kernels that do not export kernel_write load again (previously: Unknown symbol kernel_write (err -2)). Other branches keep 2026.11.6.21.",
       "client_protocol_min": 2,
       "client_protocol_max": 2
     },
@@ -132,6 +132,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "P2xZplv7gNOyD+LU68KjSRzidf+8fuO/lzy6SY2gLOWowSPNxD/4o4W8nSRFMG6kn1kjYEkZvEN5C2A9BEPVBg=="
+    "value": "ewfImMy7hln4ClWYnOHshe1l8xA3dupNYlLsNK50B2wdDEUyWixGQiRV+LWfW0AfyLjfCn+7L98cmOv4kXwmCg=="
   }
 }
