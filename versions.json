@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-11T08:14:10.325548+08:00",
+  "updated_at": "2026-11-16T21:52:51.554610+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -122,6 +122,46 @@
       "validation": "2026.11.6.25 makes the sensor hook load on vendor 6.1 kernels (MEIZU 21, 6.1.25-android14-11). The 6.1 package no longer imports iov_iter_advance, which that kernel does not export, and no longer imports anon_inode_getfile, whose vendor-built struct file_operations makes the modversions CRC disagree and aborts the whole load with \"disagrees about version of symbol\". The unused iov_iter_advance() call is removed from the send path (the msghdr iterator is still restored), and the four anon_inode_getfile() call sites (touch forward, native notice, register relay, PTE transport) now go through ctf_anon_inode_getfile(), which resolves the address through the driver resolver and calls it from a __nocfi trampoline, returning ERR_PTR(-ENOENT) when absent. Verified on MEIZU 21: insmod succeeds, no unknown-symbol or CRC errors, \"liming: sensor ready active=16 buffers=16x32768 rules=8\". The other five branches are unchanged code rebuilt from the same source tree and import-audited.",
       "client_protocol_min": 2,
       "client_protocol_max": 2
+    },
+    "5.4": {
+      "version": "2026.11.16.1",
+      "version_code": 2026111601,
+      "target": "android12-5.4",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.16.1/liming_kernel-5.4.lmko",
+      "path": "ko/2026.11.16.1/liming_kernel-5.4.lmko",
+      "size": 3627364,
+      "sha256": "0017062c41982f3bd726511e2a526c1f044a296975ba1dcab10c5aa135872943",
+      "plaintext_size": 3627256,
+      "plaintext_sha256": "cfd54acceb9e64c448d525201f0c7eca3d7c7a65506ba36379ee6bdf8e3d7b91",
+      "vermagic": "5.4.302-gac9818bd36ad SMP preempt mod_unload modversions aarch64",
+      "validation": "2026.11.16.1 adds the 5.4 dual build. The QGKI package is built from the OnePlus sm8350 5.4.210 tree with the device config and matches the vendor struct module layout natively (960/384/888); verified on OnePlus 9: plain insmod runs init, my_kthread, sensor ready, hidden + dock passed. The GKI package is the ACK 5.4.302 build (896/376/824) and relies on the loader profile evidence + this_module relocation when installed on a 5.4 QGKI kernel. Clients select the flavour by uname (-qgki- -> 5.4_qgki, else 5.4) and only module_layout is kept from the trusted device profile.",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2,
+      "kernel_tag": "gki",
+      "automatic_selection": false
+    },
+    "5.4_qgki": {
+      "version": "2026.11.16.1",
+      "version_code": 2026111601,
+      "target": "android12-5.4-qgki",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.16.1/liming_kernel-5.4-qgki.lmko",
+      "path": "ko/2026.11.16.1/liming_kernel-5.4-qgki.lmko",
+      "size": 3377004,
+      "sha256": "7352406e3608ef5c824f2d176f9e2c412110df2c9a945129562639db3580d4ad",
+      "plaintext_size": 3376896,
+      "plaintext_sha256": "c39db4009f52393fd94bc70c71dc1dd3d9979fe2a1c178fb67cba0adc1021743",
+      "vermagic": "5.4.210-qgki-g0899d8e7dee0 SMP preempt mod_unload modversions aarch64",
+      "validation": "2026.11.16.1 adds the 5.4 dual build. The QGKI package is built from the OnePlus sm8350 5.4.210 tree with the device config and matches the vendor struct module layout natively (960/384/888); verified on OnePlus 9: plain insmod runs init, my_kthread, sensor ready, hidden + dock passed. The GKI package is the ACK 5.4.302 build (896/376/824) and relies on the loader profile evidence + this_module relocation when installed on a 5.4 QGKI kernel. Clients select the flavour by uname (-qgki- -> 5.4_qgki, else 5.4) and only module_layout is kept from the trusted device profile.",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2,
+      "kernel_tag": "qgki",
+      "automatic_selection": false
     }
   },
   "client_protocol": {
@@ -132,6 +172,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "paEej+nodK2dvJL4Tp35f6Y7hCmCmeyNaeR6qik/RdkZw74lWIpRyqKYGN/0Lgadq4HwsJf0Bhu/Mz9T/0SjDg=="
+    "value": "sFcbSkXU6Zavq0ANFmC2UAs6h/wW8nhPehpZeGYaOSRbTxXBb1kUdzae/7t7Qrl/bM3AxVyttFmoQ/MaR6ZWBg=="
   }
 }
