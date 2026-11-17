@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-16T23:11:24.910211+08:00",
+  "updated_at": "2026-11-17T19:29:38.661116+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -141,7 +141,29 @@
       "client_protocol_min": 2,
       "client_protocol_max": 2,
       "kernel_tag": "gki",
-      "automatic_selection": false
+      "automatic_selection": false,
+      "allow_force_adapt": true
+    },
+    "5.4_qgki": {
+      "version": "5.4.210-colors-A13",
+      "version_code": 2026111701,
+      "target": "5.4.210-colors-A13",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.17.1/liming_kernel-5.4.210-colors-A13.lmko",
+      "path": "ko/2026.11.17.1/liming_kernel-5.4.210-colors-A13.lmko",
+      "size": 3539012,
+      "sha256": "33eddf23b8719a3e89e6fcc1c2b9e7a3eff2cb8215591a346e4934544b421a1c",
+      "plaintext_size": 3538904,
+      "plaintext_sha256": "c7c01ec8fdd418410a80f5337668569c974297dfee8ae56765e9ffb21e40db0d",
+      "vermagic": "5.4.210-qgki-g0899d8e7dee0 SMP preempt mod_unload modversions aarch64",
+      "validation": "Native OnePlus 9 Android 13 (LE2110_13.1.0.190) vendor build: sms8350_t_13.1.0_oneplus9 kernel c74bffd3 + official vendor/oplus f9fb4d99, CONFIG_OPLUS_FEATURE_SCHED_ASSIST=y and -DOPLUS_FEATURE_SCHED_ASSIST both present. sizeof(mutex)=40, file.private_data=0xD0, perf_event.overflow_handler_context=0x3A8, this_module=960/384/888, module_layout CRC 0x108a7d04. First install uses force_layout=0; force adaptation is offered only after explicit user confirmation. Manual selection only (automatic_selection=false).",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2,
+      "kernel_tag": "qgki",
+      "automatic_selection": false,
+      "allow_force_adapt": true
     }
   },
   "client_protocol": {
@@ -152,6 +174,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "ohh6jhBGtHqStW+BiDwcKMcB3axX9en+AXbE6ISzVAfb1t3O/oF7j+hkM8chLI/YEQkVXXfb+qd2a/Cp6FTKDA=="
+    "value": "yAkzrnHAutcU1db+ujJsZumLVIEhgbrlfKD71dhwwJfrOLzdyNRCS7o0IyM5oEnXcQwIA/C5sOO5UqmIKsbYDw=="
   }
 }
