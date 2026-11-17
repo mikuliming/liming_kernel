@@ -2,7 +2,7 @@
   "schema_version": 1,
   "channel": "stable",
   "repository": "https://github.com/mikuliming/liming_kernel",
-  "updated_at": "2026-11-17T19:29:38.661116+08:00",
+  "updated_at": "2026-11-17T22:27:28.441108+08:00",
   "key_id": "ed25519-49651e3adf306dc5",
   "module_name": "liming_kernel",
   "module_parameters": {
@@ -164,6 +164,27 @@
       "kernel_tag": "qgki",
       "automatic_selection": false,
       "allow_force_adapt": true
+    },
+    "5.4_qgki_a14": {
+      "version": "5.4.254-colors-A14",
+      "version_code": 2026111702,
+      "target": "5.4.254-colors-A14",
+      "architecture": "aarch64",
+      "page_size": 4096,
+      "package_format": "LMKOv1",
+      "url": "https://raw.githubusercontent.com/mikuliming/liming_kernel/main/ko/2026.11.17.2/liming_kernel-5.4.254-colors-A14.lmko",
+      "path": "ko/2026.11.17.2/liming_kernel-5.4.254-colors-A14.lmko",
+      "size": 3549340,
+      "sha256": "506083086e8d6cc77aa6e30bbb8ae9393395865373dad0f0fcdebdfba3f2792f",
+      "plaintext_size": 3549232,
+      "plaintext_sha256": "13eb8ed53e6533372b12e1f35f96c15d875ea27f664f73c6c52dab7608d80036",
+      "vermagic": "5.4.254-qgki-gd2a1055adeb0 SMP preempt mod_unload modversions aarch64",
+      "validation": "Native OnePlus 9 Android 14 (LE2111_14.0.0.1902) vendor build: GitHub mirror oneplus/sm8350_u_14.0.0_oneplus9 kernel 9e38a9fa (5.4.254) + official vendor/oplus d95833d6, device config from /proc/config.gz, CONFIG_OPLUS_FEATURE_SCHED_ASSIST=y and -DOPLUS_FEATURE_SCHED_ASSIST both present. Device vermagic 5.4.254-qgki-gd2a1055adeb0; sizeof(mutex)=56, file.private_data=0xE0, perf_event.overflow_handler_context=0x3C8, input_dev h_list/node/num_vals/timestamp=0x600/0x610/0x620/0x638, task_struct.thread=0xEE0, thread.debug=0x11A0. Real-device smoke test PASS (dock, CE notice, sensor, hwbp capture). First install uses force_layout=0; force adaptation is offered only after explicit user confirmation. Manual selection only (automatic_selection=false).",
+      "client_protocol_min": 2,
+      "client_protocol_max": 2,
+      "kernel_tag": "qgki",
+      "automatic_selection": false,
+      "allow_force_adapt": true
     }
   },
   "client_protocol": {
@@ -174,6 +195,6 @@
     "algorithm": "Ed25519",
     "key_id": "ed25519-49651e3adf306dc5",
     "canonicalization": "sorted-compact-utf8-without-signature",
-    "value": "yAkzrnHAutcU1db+ujJsZumLVIEhgbrlfKD71dhwwJfrOLzdyNRCS7o0IyM5oEnXcQwIA/C5sOO5UqmIKsbYDw=="
+    "value": "Phm6hKUQpyoGNAnROTB6KEMWLBLhHXDHfRXBqo9DBHAAOCbN8Yxq7K6r+ykIWBdAtLKYuU7huMaBMoviiMB3DQ=="
   }
 }
